@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Video Player</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background-color: #f4f4f4; }
+        .container { display: flex; flex-direction: column; align-items: center; }
+        .video-player { width: 100%; max-width: 720px; position: sticky; top: 0; background: #000; }
+        .video-player video { width: 100%; }
+        .video-list { width: 100%; max-width: 720px; overflow-y: auto; height: auto; }
+        .video-list::-webkit-scrollbar { width: 8px; }
+        .video-list::-webkit-scrollbar-thumb { background: #888; border-radius: 4px; }
+        .video-list::-webkit-scrollbar-thumb:hover { background: #555; }
+        .video-item { display: flex; align-items: center; padding: 10px; cursor: pointer; border-bottom: 1px solid #ddd; background: #fff; }
+        .video-item:hover { background-color: #f0f0f0; }
+        .video-item img { width: 100px; height: 56px; object-fit: cover; margin-right: 10px; }
+        .video-item h4 { margin: 0; font-size: 16px; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video-player">
+            <video id="mainVideo" controlsList="nodownload noremoteplayback" controls="controls" poster="https://via.placeholder.com/720x410">
+                <source id="mainSource" src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="video-list">
+            <div class="video-item" onclick="playVideo('https://res.cloudinary.com/statu-video/video/upload/v1719738900/SANTALI%20FLIM/DAAN/Dfg_567.mp4')">
+                <img src="https://res.cloudinary.com/statu-video/image/upload/v1719624538/SANTALI%20FLIM/DAAN/3AaWkmv5Q18-HD.jpg" alt="Video 1">
+                <h4>Video 1</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://res.cloudinary.com/statu-video/video/upload/v1719974147/SANTALI%20FLIM/TOPOL%20SAGAI/TAPAL_SAGAI_Trailer____New_Santali_Serial____Pintu_Soren_Sabita_Hansdah____PC_2DU_INDUSTRY.mp4')">
+                <img src="https://res.cloudinary.com/statu-video/image/upload/v1719972917/SANTALI%20FLIM/TOPOL%20SAGAI/ZRlnEucjTa8-HD.jpg" alt="Video 2">
+                <h4>Video 2</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://res.cloudinary.com/statu-video/video/upload/v1719974147/SANTALI%20FLIM/TOPOL%20SAGAI/TAPAL_SAGAI_Trailer____New_Santali_Serial____Pintu_Soren_Sabita_Hansdah____PC_2DU_INDUSTRY.mp4')">
+                <img src="https://res.cloudinary.com/statu-video/image/upload/v1719972917/SANTALI%20FLIM/TOPOL%20SAGAI/ZRlnEucjTa8-HD.jpg" alt="Video 2">
+                <h4>Video 3</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://res.cloudinary.com/statu-video/video/upload/v1719974147/SANTALI%20FLIM/TOPOL%20SAGAI/TAPAL_SAGAI_Trailer____New_Santali_Serial____Pintu_Soren_Sabita_Hansdah____PC_2DU_INDUSTRY.mp4')">
+                <img src="https://res.cloudinary.com/statu-video/image/upload/v1719972917/SANTALI%20FLIM/TOPOL%20SAGAI/ZRlnEucjTa8-HD.jpg" alt="Video 2">
+                <h4>Video 4</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://res.cloudinary.com/statu-video/video/upload/v1719974147/SANTALI%20FLIM/TOPOL%20SAGAI/TAPAL_SAGAI_Trailer____New_Santali_Serial____Pintu_Soren_Sabita_Hansdah____PC_2DU_INDUSTRY.mp4')">
+                <img src="https://res.cloudinary.com/statu-video/image/upload/v1719972917/SANTALI%20FLIM/TOPOL%20SAGAI/ZRlnEucjTa8-HD.jpg" alt="Video 2">
+                <h4>Video 5</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://res.cloudinary.com/statu-video/video/upload/v1719974147/SANTALI%20FLIM/TOPOL%20SAGAI/TAPAL_SAGAI_Trailer____New_Santali_Serial____Pintu_Soren_Sabita_Hansdah____PC_2DU_INDUSTRY.mp4')">
+                <img src="https://res.cloudinary.com/statu-video/image/upload/v1719972917/SANTALI%20FLIM/TOPOL%20SAGAI/ZRlnEucjTa8-HD.jpg" alt="Video 2">
+                <h4>Video 6</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 7</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 8</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 9</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 10</h4>
+            </div>
+            <div class="video-list">
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 1">
+                <h4>Video 12</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 12</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 13</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 14</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 15</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 16</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 17</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 18</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 19</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 20</h4>
+            </div>
+            <div class="video-list">
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 1">
+                <h4>Video 21</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 22</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 23</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 24</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 25</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 26</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 27</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 28</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 29</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 30</h4>
+            </div>
+            <div class="video-list">
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/mov_bbb.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 1">
+                <h4>Video 30</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 31</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 32</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 34</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 35</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 36</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 37</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 38</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 39</h4>
+            </div>
+            <div class="video-item" onclick="playVideo('https://www.w3schools.com/html/movie.mp4', 'https://via.placeholder.com/720x410')">
+                <img src="https://via.placeholder.com/100x56" alt="Video 2">
+                <h4>Video 40</h4>
+            </div>
+            <!-- Add more video items here -->
+        </div>
+    </div>
+
+    <script>
+        function playVideo(src, poster) {
+            const mainVideo = document.getElementById('mainVideo');
+            const mainSource = document.getElementById('mainSource');
+            mainSource.src = src;
+            mainVideo.poster = poster;
+            mainVideo.load();
+            mainVideo.play();
+        }
+    </script>
+</body>
+</html>
